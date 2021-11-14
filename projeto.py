@@ -21,8 +21,15 @@ def index():
 def adicionar():
     return render_template('adicionar.html')
 
-@app.route('/salvar')
+@app.route('/salvar', methods=['POST']) # <form action='/salvar' method='POST'> salva o formulário
 def salvar():
+    nome_jogo = request.form['nome_jogo'] # <input name='texto'/> jogo adicionado à lista
+    preco = request.form['preco']
+    nota = request.form['nota'] 
+    novo_jogo = {'Nome do jogo':nome_jogo, 'Preço':'R$' preco, 'Nota': nota}
+
+    jogos.append(novo_jogo) # adição do novo jogo à lista
+
     return('https://5000-scarlet-buzzard-jaqif293.ws-us18.gitpod.io/')
 
 
