@@ -23,14 +23,14 @@ def adicionar():
 
 @app.route('/salvar', methods=['POST']) # <form action='/salvar' method='POST'> salva o formulário
 def salvar():
-    texto = request.form['texto'] # <input name='texto'/> jogo adicionado à lista
+    nome_jogo = request.form['nome_jogo'] # <input name='texto'/> jogo adicionado à lista
     preco = request.form['preco']
     nota = request.form['nota'] 
-    novo = {'Nome do jogo': texto, 'Preço':f'R$ {preco}', 'Nota': nota}
+    novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-jade-mollusk-hyu0o6s5.ws-us18.gitpod.io/')
+    return redirect('https://5000-cyan-wildcat-3jxo07xc.ws-us18.gitpod.io/')
 
 
 app.run(debug=True)
