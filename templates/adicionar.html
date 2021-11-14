@@ -9,14 +9,17 @@
 
         <form action='/salvar' method='POST'>
 
-            <input type='text' class='form-control' name='nome_jogo'/>
-            <input type='text' class='form-control' name='preco'/>
-            <input type='text' class='form-control' name='nota'/>
+            <label>Insira o nome do jogo<input type='text' class='form-control' placeholder='Nome do jogo' name='texto'/></label> <br>
+            <label>Insira o preço do jogo<input type='number' class='form-control' placeholder='Preço do jogo' name='preco'/></label> <br>
+            <label>Insira a nota do jogo<input type='number' class='form-control' placeholder='Nota do jogo' name='nota'/></label> <br>
 
+            <br>
+
+            <a href='/' class='btn btn-secondary'>Voltar</a>
             <button class='btn btn-dark btn-lg'>Adicionar</button>
         </form>
 
-        <a href='/' class='btn btn-danger'>Voltar</a>
+        
     </div>
 
 
