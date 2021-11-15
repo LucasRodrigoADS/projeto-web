@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        {% for jogo in jogo_lista %}
+        <tr>
+            <td>{{ jogo['Nome do Jogo'] }}</td>
+            <td>{{ jogo['Preço'] }}</td>
+            <td>{{ jogo['Nota'] }}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</head>
+</html>

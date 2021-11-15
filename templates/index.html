@@ -36,6 +36,18 @@
             background-color: #800000;
             color: white;
         }
+        .botao_pesquisar {
+            background-color: #004d80;
+            color:white;
+            position: static;
+            bottom: 50px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition-duration: 0.2s;
+        }
+        .botao_pesquisar:hover {
+            color: #a7a2b8
+        }
 
     </style>
     <title>Lista de Jogos</title>
@@ -50,15 +62,25 @@
         <table class='table table-striped table-dark'>
             <thead>
             <tr>
+                <th>#</th>
                 <th>Nome do Jogo</th>
                 <th>Preço</th>
                 <th>Nota Metacritic</th>
             </tr>
             </thead>
+            <div align="Right">
+                <div class="col-sm-6">
+                    <form action="/buscar" method="POST" class="form-inline">
+                    <input type="text" id="search" placeholder="Pesquisar" name='busca'> 
+                    <button class='botao_pesquisar'>OK</button>
+                 </form>
+                </div>
+            </div>
             <h5 style="color:white">A lista atualmente contém <b>{{ lista|length }} jogos</b></h5>
 
                 {% for jogo in lista: %}
                 <tr>
+                    <td>{{ n }}</td>
                     <td>{{ jogo['Nome do Jogo'] }}</td>
                     <td>{{ jogo['Preço'] }}</td>
                     <td>{{ jogo['Nota'] }}</td>
