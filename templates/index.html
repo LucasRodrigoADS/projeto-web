@@ -45,7 +45,7 @@
 
     <div class='container'>
         <br>
-        <h2 align="center" style=color:'white'>Lista de Jogos e seus respectivos preços e notas</h2>
+        <h2 style='color:white;' align="center">Lista de Jogos e seus respectivos preços e notas</h2>
         <br>
         <table class='table table-striped table-dark'>
             <thead>
@@ -55,7 +55,7 @@
                 <th>Nota Metacritic</th>
             </tr>
             </thead>
-            <h5>A lista atualmente contém <b>{{ lista|length }} jogos</b></h5>
+            <h5 style="color:white">A lista atualmente contém <b>{{ lista|length }} jogos</b></h5>
 
                 {% for jogo in lista: %}
                 <tr>
