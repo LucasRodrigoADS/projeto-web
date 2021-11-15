@@ -13,7 +13,7 @@
         }
 
         .botao {
-            background-color:#181818;
+            background-color:#1f0085;
             color:white;
             text-decoration: none;
             position: relative;
@@ -21,6 +21,7 @@
             left: 1023px;
             padding: 20px 48px;
             border-radius: 8px;
+            border: 1px solid white;
             transition-duration: 0.2s;
         }
         
@@ -53,13 +54,17 @@
             color: white;
         }
         .botao_pesquisar {
-            background-color: #004d80;
+            background-color: #1f0085;
             color:white;
             position: static;
-            bottom: 50px;
-            padding: 5px 10px;
+            bottom: 30px;
+            padding: 2px 5px;
             border-radius: 8px;
+            border: 1px solid white;
             transition-duration: 0.2s;
+        }
+        .barra {
+            border-radius: 6px;
         }
         .botao_pesquisar:hover {
             color: #a7a2b8
@@ -84,8 +89,8 @@
             </thead>
             <div align="Right">
                 <form action="/buscar" method="POST" class="form-inline">
-                    <input type="text" placeholder="Pesquisar" name='busca'> 
-                    <button class='botao_pesquisar'>OK</button>
+                    <input type="text" placeholder="Pesquisar jogo..." name='busca' class='barra'> 
+                    <button class='botao_pesquisar'>🔎</button>
                 </form>
             </div>
             </div>
@@ -101,7 +106,7 @@
         </table>
 
         <form action='/remover' method='POST'>
-            <label style='color:white;'>Insira a posição do jogo que deseja remover <input type='number' class='form-control' placeholder="Nº posição" name='remove'></label>
+            <label style='color:white;'>Insira a posição do jogo que deseja remover <input type='number' class='form-control' placeholder="Nº posição" name='deleta'></label>
             <button class='botao2'>Remover jogo</button>
         </form>
         

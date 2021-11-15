@@ -34,10 +34,10 @@ def salvar():
 
 @app.route('/remover', methods=['POST'])
 def remover():
-    remove = request.form['remove']
-    remove = int(remove)
-    del jogos[remove-1]
-    
+    deleta = request.form['deleta']
+    deleta = int(deleta)
+    del jogos[deleta-1]
+
     return redirect('https://5000-coral-crayfish-6c1897a5.ws-us18.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
