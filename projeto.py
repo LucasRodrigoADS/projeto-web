@@ -43,12 +43,14 @@ def remover():
 @app.route('/buscar', methods=['POST'])
 def buscar():
     busca = request.form['busca']
+    jogo_dict = dict()
     for jogo in jogos: 
-        if busca in jogo['Nome do Jogo']:
-            jogo_dict = dict()
+        if busca.lower() in jogo['Nome do Jogo'].lower():
             jogo_dict.update(jogo)
             jogo_posicao = [jogo_dict]
-
             return render_template('busca.html', jogo_lista=jogo_posicao)
+
+    return render_template('botão.html')
+        
 
 app.run(debug=True)
