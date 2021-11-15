@@ -30,7 +30,18 @@ def salvar():
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-cyan-wildcat-3jxo07xc.ws-us18.gitpod.io/')
+    return redirect('https://5000-chocolate-moth-b9vtpqrj.ws-us18.gitpod.io/')
 
+@app.route('/remover', methods=['POST'])
+def remover():
+    remove = request.form['remove']
+    remove = int(remove)
+    del jogos[remove-1]
+    
+    return redirect('https://5000-chocolate-moth-b9vtpqrj.ws-us18.gitpod.io/')
+
+@app.route('/buscar', methods=['POST'])
+def buscar():
+    pass
 
 app.run(debug=True)
