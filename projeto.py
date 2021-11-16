@@ -12,7 +12,6 @@ jogos = [
     {'#': 7, 'Nome do Jogo': 'The Witcher 3: Wild Hunt', 'Preço': 'R$ 79,99', 'Nota':93},
     {'#': 8, 'Nome do Jogo': 'Dead by Daylight', 'Preço': 'R$ 29,80', 'Nota':71},
 ]
-jogo_count = len(jogos)
 
 @app.route('/')
 def index():
@@ -27,7 +26,8 @@ def salvar():
     nome_jogo = request.form['nome_jogo'] # <input name='texto'/> jogo adicionado à lista
     preco = request.form['preco']
     nota = request.form['nota'] 
-    novo = { '#':jogo_count+1, 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
+    jogo_count = len(jogos)
+    novo = { '#':f'{jogo_count+1}', 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
 
     jogos.append(novo) # adição do novo jogo à lista
 
