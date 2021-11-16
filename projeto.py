@@ -13,7 +13,7 @@ jogos = [
     { 'Nome do Jogo': 'Dead by Daylight', 'Preço': 'R$ 29,80', 'Nota':71 },
 ]
 
-@app.route('/')
+@app.route('/')     # Página principal
 def index():
     return render_template('index.html', lista=jogos)
 
@@ -21,12 +21,12 @@ def index():
 def adicionar():
     return render_template('adicionar.html')
 
-@app.route('/salvar', methods=['POST']) # <form action='/salvar' method='POST'> salva o formulário
+@app.route('/salvar', methods=['POST'])   
 def salvar():
-    nome_jogo = request.form['nome_jogo'] # <input name='texto'/> jogo adicionado à lista
+    nome_jogo = request.form['nome_jogo']   
     preco = request.form['preco']
     nota = request.form['nota'] 
-    novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
+    novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota } # dicionário recebendo o novo jogo
 
     jogos.append(novo) # adição do novo jogo à lista
 
@@ -36,9 +36,11 @@ def salvar():
 def remover():
     deleta = request.form['deleta']
     deleta = int(deleta)
-    if deleta <= len(jogos) and deleta > 0:
-        del jogos[deleta-1]
+
+    if deleta <= len(jogos) and deleta > 0: # compara a posição inserida pelo usuário com o tamanho da lista
+        del jogos[deleta-1]                 # deleta o jogo
         return redirect('https://5000-beige-rabbit-dbas5dg9.ws-us18.gitpod.io/')
+
     return render_template('erro-remover.html')
 
 @app.route('/buscar', methods=['POST'])
@@ -46,9 +48,9 @@ def buscar():
     jogo_lista = []
     busca = request.form['busca']
     for jogo in jogos: 
-        if busca.lower() in jogo['Nome do Jogo'].lower():
-            jogo_lista.append(jogo)
-    return render_template('busca.html', lista=jogo_lista)
+        if busca.lower() in jogo['Nome do Jogo'].lower():   # compara a busca com os jogos presentes na lista
+            jogo_lista.append(jogo)                         # nova lista com os resultados das buscas
+    return render_template('busca.html', jogo_lista=jogo_lista)
         
 
 app.run(debug=True)
