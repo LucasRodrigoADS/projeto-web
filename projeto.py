@@ -26,12 +26,11 @@ def salvar():
     nome_jogo = request.form['nome_jogo'] # <input name='texto'/> jogo adicionado à lista
     preco = request.form['preco']
     nota = request.form['nota'] 
-    jogo_count = len(jogos)
     novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-gray-tyrannosaurus-tu1ml5ud.ws-us18.gitpod.io/')
+    return redirect('https://5000-beige-rabbit-dbas5dg9.ws-us18.gitpod.io/')
 
 @app.route('/remover', methods=['POST'])
 def remover():
@@ -39,7 +38,7 @@ def remover():
     deleta = int(deleta)
     if deleta <= len(jogos) and deleta > 0:
         del jogos[deleta-1]
-        return redirect('https://5000-gray-tyrannosaurus-tu1ml5ud.ws-us18.gitpod.io/')
+        return redirect('https://5000-beige-rabbit-dbas5dg9.ws-us18.gitpod.io/')
     return render_template('erro-remover.html')
 
 @app.route('/buscar', methods=['POST'])
