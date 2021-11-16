@@ -7,7 +7,12 @@
         }
         table {
             outline-style: ridge;
+            counter-reset: tableCount;  
         }
+        .counterCell:before {              
+            content: counter(tableCount); 
+            counter-increment: tableCount; 
+}
         .botao {
             background-color:#333385;
             color:white;
@@ -107,7 +112,7 @@
 
                 {% for jogo in lista: %}
                 <tr>
-                    <td>{{ jogo['#'] }}</td>
+                    <td class='counterCell'>{{ jogo['#'] }}</td>
                     <td>{{ jogo['Nome do Jogo'] }}</td>
                     <td>{{ jogo['Preço'] }}</td>
                     <td>{{ jogo['Nota'] }}</td>

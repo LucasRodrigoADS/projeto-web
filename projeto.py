@@ -3,14 +3,14 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 jogos = [
-    {'Nome do Jogo': 'State of decay 2', 'Preço': 'R$ 79,99', 'Nota':66},
-    {'Nome do Jogo': 'Mass Effect Legendary Edition', 'Preço': 'R$ 299,99','Nota':86},
-    {'Nome do Jogo': 'Dragon Age: Origins', 'Preço': 'R$ 59,00', 'Nota':91},
-    {'Nome do Jogo': 'Forza Horizon 5', 'Preço': 'R$ 249,99', 'Nota':95},
-    {'Nome do Jogo': 'Tales From the Borderlands: A Telltale Game Series', 'Preço': 'R$ 104,90', 'Nota':86},
-    {'Nome do Jogo': 'Stardew Valley', 'Preço': 'R$ 24,99', 'Nota':89},
-    {'Nome do Jogo': 'The Witcher 3: Wild Hunt', 'Preço': 'R$ 79,99', 'Nota':93},
-    {'Nome do Jogo': 'Dead by Daylight', 'Preço': 'R$ 29,80', 'Nota':71},
+    { 'Nome do Jogo': 'State of decay 2', 'Preço': 'R$ 79,99', 'Nota':66 },
+    { 'Nome do Jogo': 'Mass Effect Legendary Edition', 'Preço': 'R$ 299,99','Nota':86 },
+    { 'Nome do Jogo': 'Dragon Age: Origins', 'Preço': 'R$ 59,00', 'Nota':91 },
+    { 'Nome do Jogo': 'Forza Horizon 5', 'Preço': 'R$ 249,99', 'Nota':95 },
+    { 'Nome do Jogo': 'Tales From the Borderlands: A Telltale Game Series', 'Preço': 'R$ 104,90', 'Nota':86 },
+    { 'Nome do Jogo': 'Stardew Valley', 'Preço': 'R$ 24,99', 'Nota':89 },
+    { 'Nome do Jogo': 'The Witcher 3: Wild Hunt', 'Preço': 'R$ 79,99', 'Nota':93 },
+    { 'Nome do Jogo': 'Dead by Daylight', 'Preço': 'R$ 29,80', 'Nota':71 },
 ]
 
 @app.route('/')
@@ -27,7 +27,7 @@ def salvar():
     preco = request.form['preco']
     nota = request.form['nota'] 
     jogo_count = len(jogos)
-    novo = { '#':f'{jogo_count+1}', 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
+    novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota }
 
     jogos.append(novo) # adição do novo jogo à lista
 
@@ -37,8 +37,7 @@ def salvar():
 def remover():
     deleta = request.form['deleta']
     deleta = int(deleta)
-
-    if deleta > 0 and deleta < len(jogos):
+    if deleta <= len(jogos) and deleta > 0:
         del jogos[deleta-1]
         return redirect('https://5000-ivory-armadillo-wdebr47i.ws-us18.gitpod.io/')
     return render_template('erro-remover.html')
