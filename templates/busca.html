@@ -8,6 +8,7 @@
         <table class='table table-striped table-dark'>
             <thead>
             <tr>
+                <th>#</th>
                 <th>Nome do Jogo</th>
                 <th>Preço</th>
                 <th>Nota Metacritic</th>
@@ -16,6 +17,7 @@
 
             {% for jogo in jogo_lista %}
             <tr>
+                <td>{{ jogo['#'] }}</td>
                 <td>{{ jogo['Nome do Jogo'] }}</td>
                 <td>{{ jogo['Preço'] }}</td>
                 <td>{{ jogo['Nota'] }}</td>
