@@ -31,7 +31,7 @@ def salvar():
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-ivory-armadillo-wdebr47i.ws-us18.gitpod.io/')
+    return redirect('https://5000-gray-tyrannosaurus-tu1ml5ud.ws-us18.gitpod.io/')
 
 @app.route('/remover', methods=['POST'])
 def remover():
@@ -39,22 +39,17 @@ def remover():
     deleta = int(deleta)
     if deleta <= len(jogos) and deleta > 0:
         del jogos[deleta-1]
-        return redirect('https://5000-ivory-armadillo-wdebr47i.ws-us18.gitpod.io/')
+        return redirect('https://5000-gray-tyrannosaurus-tu1ml5ud.ws-us18.gitpod.io/')
     return render_template('erro-remover.html')
-
-jogo_dict = {}
-jogo_lista = []
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
+    jogo_lista = []
     busca = request.form['busca']
     for jogo in jogos: 
         if busca.lower() in jogo['Nome do Jogo'].lower():
-            jogo_dict.update(jogo)
-            jogo_lista = [jogo_dict]
-            return render_template('busca.html', jogo_lista=jogo_lista)
-
-    return render_template('erro-busca.html')
+            jogo_lista.append(jogo)
+    return render_template('busca.html', lista=jogo_lista)
         
 
 app.run(debug=True)

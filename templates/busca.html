@@ -39,7 +39,7 @@
     <title>Busca de jogos</title>
 </head>
 <body>
-    <h2 style='position:relative; top:50px; left: 100px;color:white;'>Encontramos seu jogo!</h2>
+    <h2 style='position:relative; top:50px; left: 100px;color:white;'>O resultado da sua busca foi:</h2>
     <div class="container">
         <table class='table table-striped table-dark'>
             <thead>
@@ -51,7 +51,7 @@
             </tr>
             </thead>
 
-            {% for jogo in jogo_lista %}
+            {% for jogo in lista %}
             <tr>
                 <td>{{ jogo['#'] }}</td>
                 <td>{{ jogo['Nome do Jogo'] }}</td>
