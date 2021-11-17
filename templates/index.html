@@ -15,8 +15,9 @@
             content: counter(tableCount); 
             counter-increment: tableCount; 
         }
-        div {
-            position:relative
+        .botao-pos {
+            position:relative;
+            right: 50px;
         }
         .botao {
             background-color:#333385;
@@ -24,8 +25,8 @@
             font-weight: bold;
             text-decoration: none;
             position: absolute;
-            top:400px;
-            left: 1085px;
+            top:550px;
+            left: 1135px;
             padding: 10px 70px;
             border-radius: 8px;
             border: 1px solid white;
@@ -35,14 +36,18 @@
             background-color:#1c005e;
             color: white;
         }
-        .delete {
+        .deleta-pos {
+            position: relative;
+            right: 70px;
+        }
+        .deleta {
             outline-style: groove;
             border: 2px solid white;
-            margin-right: 400px;
+            margin-right: 300px;
             padding: 20px 50px;
-            position: relative;
-            top: 460px;
-            right: 4px;
+            position: absolute;
+            top: 380px;
+            right: 200px;
         }
         .form-remove {
             position: relative;
@@ -131,16 +136,18 @@
                 </tr>
                 {% endfor %}
 
-                <div class='delete'>    
+                <div class='deleta-pos'>
+                    <div class='deleta'>    
 
-                    <form action='/remover' method='POST'>  <!--Formulário e botão de remover jogo-->
-                        <label style='color:white; position:relative; right:35px;'>Insira a posição do jogo que deseja remover:</label><input type='number' class='form-remove' placeholder="Nº posição" name='deleta'>
-                        <button class='botao2'>Remover jogo</button>
-                    </form>
+                        <form action='/remover' method='POST'>  <!--Formulário e botão de remover jogo-->
+                            <label style='color:white; position:relative; right:35px;'>Insira a posição do jogo que deseja remover:</label><input type='number' class='form-remove' placeholder="Nº posição" name='deleta'>
+                            <button class='botao2'>Remover jogo</button>
+                        </form>
         
+                    </div>
                 </div>
 
-                <div>
+                <div clss='botao-pos'>
                     <a href='/adicionar' class='botao'>Adicionar jogo</a>   <!--Botão de adicionar jogo-->
                 </div>
 
