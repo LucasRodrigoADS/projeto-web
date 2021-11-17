@@ -30,7 +30,7 @@ def salvar():
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-beige-rabbit-dbas5dg9.ws-us18.gitpod.io/')
+    return redirect('https://5000-white-mink-pc7apk61.ws-us18.gitpod.io/')
 
 @app.route('/remover', methods=['POST'])
 def remover():
@@ -39,7 +39,7 @@ def remover():
 
     if deleta <= len(jogos) and deleta > 0: # compara a posição inserida pelo usuário com o tamanho da lista
         del jogos[deleta-1]                 # deleta o jogo
-        return redirect('https://5000-beige-rabbit-dbas5dg9.ws-us18.gitpod.io/')
+        return redirect('https://5000-white-mink-pc7apk61.ws-us18.gitpod.io/')
 
     return render_template('erro-remover.html')
 
