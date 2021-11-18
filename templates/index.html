@@ -15,14 +15,17 @@
             content: counter(tableCount); 
             counter-increment: tableCount; 
         }
+        .botao-pos {
+            position: relative;
+        }
         .botao {
             background-color:#333385;
             color:white;
             font-weight: bold;
             text-decoration: none;
             position: relative;
-            bottom: 50px;
-            left: 965px;
+            top: 40px;
+            left:1045px;
             padding: 15px 70px;
             border-radius: 8px;
             border: 1px solid white;
@@ -128,6 +131,10 @@
                 {% endfor %}
 
         </table>
+
+        <div class='botao-pos'>
+            <a href='/adicionar' class='botao'>Adicionar jogo</a>   <!--Botão de adicionar jogo-->
+        </div>
         
         <div class='deleta'>    
 
@@ -138,9 +145,9 @@
     
         </div>
 
-    </div>
 
-    <a href='/adicionar' class='botao'>Adicionar jogo</a>   <!--Botão de adicionar jogo-->
+
+    </div>
 
 </body>
 
