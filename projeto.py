@@ -35,21 +35,24 @@ def salvar():
 @app.route('/remover', methods=['POST'])
 def remover():
     deleta = request.form['deleta']
-    deleta = int(deleta)    # compara a posição inserida pelo usuário com o tamanho da lista
-    if deleta <= len(jogos) and deleta > 0 and deleta != None: 
-        del jogos[deleta-1]                 # deleta o jogo
-        return redirect('https://5000-white-mink-pc7apk61.ws-us18.gitpod.io/')
-    
-    return render_template('erro-remover.html')
+    if deleta > '':
+        deleta = int(deleta)    # compara a posição inserida pelo usuário com o tamanho da lista
+        if deleta <= len(jogos) and deleta > 0 and deleta != None: 
+            del jogos[deleta-1]                 # deleta o jogo
+            return redirect('https://5000-scarlet-swordtail-tgh8x58v.ws-us18.gitpod.io/')
+            
+    return render_template('erro-remover.html') # caso o if não for respeitado, a pág de erro é retornada
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
     jogo_lista = []
     busca = request.form['busca']
-    for jogo in jogos: 
-        if busca.lower() in jogo['Nome do Jogo'].lower():   # compara a busca com os jogos presentes na lista
-            jogo_lista.append(jogo)                         # nova lista com os resultados das buscas
-    return render_template('busca.html', jogo_lista=jogo_lista)
-        
+    if busca > '':
+        for jogo in jogos: 
+            if busca.lower() in jogo['Nome do Jogo'].lower():   # compara a busca com os jogos presentes na lista
+                jogo_lista.append(jogo)                         # nova lista com os resultados das buscas
+        return render_template('busca.html', jogo_lista=jogo_lista)
+
+    return render_template('erro-remover.html') # caso o if não for respeitado, a pág de erro é retornada
 
 app.run(debug=True)
