@@ -7,13 +7,16 @@
         body {
             background-image: linear-gradient(to right, rgb(6, 11, 51), rgb(8, 10, 24));
         }
+        .botao-volta {
+            position: relative;
+            text-align: center;  
+        }
         .volta {
+            position: relative;
+            top: 120px;
             background-color:#d84f4f;
             color:black;
             text-decoration: none;
-            position: relative;
-            top: 100px;
-            left: 620px;
             padding: 10px 20px;
             border-radius: 8px;
             border: 1px solid white;
@@ -29,9 +32,11 @@
 
 <body>
 
-    <h2 style='color:white; position:relative; top:100px;'align='center'>Jogo inexistente. Tente inserir um jogo presente na lista</h2> <br>
+    <div class='botao-volta'>
+        <h2 style='color:white; position:relative; top:100px;'>Jogo inexistente. Tente inserir um jogo presente na lista</h2> <br>
 
-    <a href='/' class='volta'>Voltar à página inicial</a>
+        <a href='/' class='volta'>Voltar à página inicial</a>
+    </div>
 
 </body>
 
