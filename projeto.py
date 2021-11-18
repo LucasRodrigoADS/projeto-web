@@ -30,7 +30,7 @@ def salvar():
 
     jogos.append(novo) # adição do novo jogo à lista
 
-    return redirect('https://5000-white-mink-pc7apk61.ws-us18.gitpod.io/')
+    return redirect('https://5000-silver-alpaca-ij9y49qx.ws-us18.gitpod.io/')
 
 @app.route('/remover', methods=['POST'])
 def remover():
@@ -39,7 +39,7 @@ def remover():
         deleta = int(deleta)    # compara a posição inserida pelo usuário com o tamanho da lista
         if deleta <= len(jogos) and deleta > 0 and deleta != None: 
             del jogos[deleta-1]                 # deleta o jogo
-            return redirect('https://5000-scarlet-swordtail-tgh8x58v.ws-us18.gitpod.io/')
+            return redirect('https://5000-silver-alpaca-ij9y49qx.ws-us18.gitpod.io/')
             
     return render_template('erro-remover.html') # caso o if não for respeitado, a pág de erro é retornada
 
