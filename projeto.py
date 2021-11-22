@@ -27,10 +27,13 @@ def salvar():
     preco = request.form['preco']
     nota = request.form['nota'] 
     novo = { 'Nome do Jogo':f'{nome_jogo}', 'Preço':f'R$ {preco}', 'Nota': nota } # dicionário recebendo o novo jogo
+    if nome_jogo > '' and preco > '' and nota > '':
+        jogos.append(novo) # adição do novo jogo à lista
 
-    jogos.append(novo) # adição do novo jogo à lista
+    return redirect('https://5000-emerald-toucan-ygaho4jv.ws-us17.gitpod.io/')
 
-    return redirect('https://5000-silver-alpaca-ij9y49qx.ws-us18.gitpod.io/')
+   
+    
 
 @app.route('/remover', methods=['POST'])
 def remover():
@@ -39,7 +42,7 @@ def remover():
         deleta = int(deleta)    # compara a posição inserida pelo usuário com o tamanho da lista
         if deleta <= len(jogos) and deleta > 0 and deleta != None: 
             del jogos[deleta-1]                 # deleta o jogo
-            return redirect('https://5000-silver-alpaca-ij9y49qx.ws-us18.gitpod.io/')
+            return redirect('https://5000-emerald-toucan-ygaho4jv.ws-us17.gitpod.io/')
             
     return render_template('erro-remover.html') # caso o if não for respeitado, a pág de erro é retornada
 
